@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotización Desarrollo Web - Landing Page Profesional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #2C5F8D;
+        }
+        
+        .header h1 {
+            color: #2C5F8D;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 18px;
+            font-style: italic;
+        }
+        
+        .promo-badge {
+            display: inline-block;
+            background: #FF6B6B;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 15px 0;
+            font-size: 14px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .section {
+            margin-bottom: 35px;
+        }
+        
+        .section-title {
+            color: #2C5F8D;
+            font-size: 24px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .section-subtitle {
+            color: #2C5F8D;
+            font-size: 20px;
+            margin: 20px 0 10px 0;
+            font-weight: bold;
+        }
+        
+        .info-row {
+            margin-bottom: 10px;
+            padding: 8px 0;
+        }
+        
+        .info-row strong {
+            color: #2C5F8D;
+            min-width: 120px;
+            display: inline-block;
+        }
+        
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        ul li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        ul li:before {
+            content: "✓";
+            color: #00AA00;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 18px;
+        }
+        
+        .highlight-box {
+            background: #E8F4F8;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #2C5F8D;
+        }
+        
+        .highlight-box.green {
+            background: #E8F8E8;
+            border-left: 4px solid #00AA00;
+        }
+        
+        .highlight-box.yellow {
+            background: #FFF9E6;
+            border-left: 4px solid #FFB800;
+        }
+        
+        .highlight-box.red {
+            background: #FFE8E8;
+            border-left: 4px solid #FF4444;
+        }
+        
+        .highlight-box h3 {
+            color: #2C5F8D;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .highlight-box p {
+            margin: 10px 0;
+        }
+        
+        .price-box {
+            background: linear-gradient(135deg, #2C5F8D 0%, #1e4a6b 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 12px;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(44, 95, 141, 0.3);
+        }
+        
+        .price-box .old-price {
+            text-decoration: line-through;
+            opacity: 0.7;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        
+        .price-box .current-price {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .price-box .savings {
+            background: #FF6B6B;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        .included-box {
+            background: white;
+            border: 2px solid #00AA00;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .included-box h3 {
+            color: #00AA00;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .included-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .included-item:last-child {
+            border-bottom: none;
+        }
+        
+        .included-item .check {
+            color: #00AA00;
+            font-size: 24px;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        
+        .included-item .value {
+            margin-left: auto;
+            color: #666;
+            font-style: italic;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        table th {
+            background: #2C5F8D;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-size: 16px;
+        }
+        
+        table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+        
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        .option-card {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            transition: all 0.3s;
+        }
+        
+        .option-card:hover {
+            border-color: #2C5F8D;
+            box-shadow: 0 4px 12px rgba(44, 95, 141, 0.2);
+        }
+        
+        .option-card.recommended {
+            border-color: #FFB800;
+            background: #FFF9E6;
+            position: relative;
+        }
+        
+        .option-card.recommended .badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: #FFB800;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .option-card h4 {
+            color: #2C5F8D;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .option-card .price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2C5F8D;
+            margin: 15px 0;
+        }
+        
+        .option-card ul {
+            margin: 15px 0;
+        }
+        
+        .best-for {
+            background: #E8F4F8;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        
+        .payment-options {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .payment-options h4 {
+            color: #2C5F8D;
+            margin-bottom: 15px;
+        }
+        
+        .payment-option {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .payment-option:last-child {
+            border-bottom: none;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+            color: #666;
+        }
+        
+        .contact-box {
+            background: #2C5F8D;
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .contact-box h3 {
+            margin-bottom: 15px;
+        }
+        
+        .contact-box .contact-item {
+            padding: 8px 0;
+            font-size: 16px;
+        }
+        
+        .contact-box .contact-item strong {
+            display: inline-block;
+            min-width: 100px;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+        
+        .print-button {
+            background: #2C5F8D;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 20px 0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .print-button:hover {
+            background: #1e4a6b;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .tech-badge {
+            background: #E8F4F8;
+            color: #2C5F8D;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .urgency-box {
+            background: #FFE8E8;
+            border: 2px dashed #FF4444;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .urgency-box h3 {
+            color: #FF4444;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="print-button no-print" onclick="window.print()">🖨️ Imprimir / Guardar como PDF</button>
+        
+        <div class="header">
+            <h1>COTIZACIÓN DESARROLLO WEB</h1>
+            <p>Landing Page Profesional con Tecnología Moderna</p>
+            <span class="promo-badge">✨ PAQUETE TODO INCLUIDO AÑO 1 ✨</span>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">INFORMACIÓN DEL PROYECTO</h2>
+            <div class="info-row">
+                <strong>Fecha:</strong> 23 de Noviembre de 2025
+            </div>
+            <div class="info-row">
+                <strong>Tipo:</strong> Landing page corporativa de alto rendimiento
+            </div>
+            <div class="info-row">
+                <strong>Plazo:</strong> 30 días hábiles desde el pago inicial (aprox. 6 semanas)
+            </div>
+            <div class="info-row">
+                <strong>Validez:</strong> 30 días desde la fecha de esta cotización
+            </div>
+        </div>
+
+        <div class="price-box">
+            <div class="old-price">Valor Normal: $672.000</div>
+            <div class="current-price">$450.000</div>
+            <p style="font-size: 18px; margin: 10px 0;">Paquete Todo Incluido - Primer Año</p>
+            <div class="savings">✨ AHORRAS $222.000</div>
+        </div>
+
+        <div class="section">
+            <div class="included-box">
+                <h3>🎁 TODO LO QUE INCLUYE TU INVERSIÓN:</h3>
+                
+                <div class="included-item">
+                    <span class="check">✓</span>
+                    <span><strong>Desarrollo completo del sitio web</strong></span>
+                </div>
+                
+                <div class="included-item">
+                    <span class="check">✓</span>
+                    <span><strong>Diseño responsive profesional</strong> (móvil, tablet, desktop)</span>
+                </div>
+                
+                <div class="included-item">
+                    <span class="check">✓</span>
+                    <span><strong>Animaciones profesionales</strong> (scroll effects, hover, transiciones)</span>
+                </div>
+                
+                <div class="included-item">
+                    <span class="check">✓</span>
+                    <span><strong>Todas las secciones:</strong> Quienes Somos, Servicios, Portafolio, Blog, Contacto</span>
+                </div>
+                
+                <div class="included-item">
+                    <span class="check">✓</span>
+                    <span><strong>Formulario de contacto</strong> funcional con notificaciones email</span>
+                </div>
+                
+                <div class="included-item">
+                    <span class="check">✓</span>
+                    <span><strong>Botón WhatsApp</strong> flotante</span>
+                </div>
+                
+                <div class="included-item">
+                    <span class="check">✓</span>
+                    <span><strong>Google Maps</strong> integrado</span>
+                </div>
+                
+                <div class="included-item">
+                    <span class="check">✓</span>
+                    <span><strong>Optimización SEO</strong> completa</span>
+                </div>
+                
+                <div style="margin: 20px 0; padding: 20px; background: #FFF9E6; border-radius: 8px;">
+                    <h4 style="color: #FFB800; margin-bottom: 15px;">🎁 BONOS GRATIS INCLUIDOS (PRIMER AÑO):</h4>
+                    
+                    <div class="included-item">
+                        <span class="check">✓</span>
+                        <span><strong>Hosting profesional</strong> (12 meses)</span>
+                        <span class="value">Valor: $50.000</span>
+                    </div>
+                    
+                    <div class="included-item">
+                        <span class="check">✓</span>
+                        <span><strong>Dominio .cl o .com</strong> (12 meses)</span>
+                        <span class="value">Valor: $12.000</span>
+                    </div>
+                    
+                    <div class="included-item">
+                        <span class="check">✓</span>
+                        <span><strong>Certificado SSL/HTTPS</strong></span>
+                        <span class="value">Valor: $30.000</span>
+                    </div>
+                    
+                    <div class="included-item">
+                        <span class="check">✓</span>
+                        <span><strong>2 actualizaciones menores</strong></span>
+                        <span class="value">Valor: $50.000</span>
+                    </div>
+                    
+                    <div class="included-item">
+                        <span class="check">✓</span>
+                        <span><strong>Soporte técnico 60 días</strong></span>
+                        <span class="value">Valor: $80.000</span>
+                    </div>
+                    
+                    <div class="included-item">
+                        <span class="check">✓</span>
+                        <span><strong>Video tutorial + Manual PDF</strong></span>
+                    </div>
+                    
+                    <div class="included-item">
+                        <span class="check">✓</span>
+                        <span><strong>Respaldos automáticos</strong></span>
+                    </div>
+                </div>
+                
+                <div style="margin: 20px 0; padding: 20px; background: #E8F8E8; border-radius: 8px; border: 2px solid #00AA00;">
+                    <h4 style="color: #00AA00; margin-bottom: 10px;">❓ ¿Qué es 1 actualización?</h4>
+                    <p style="margin-bottom: 10px;">Un cambio menor en el sitio que toma 15-45 minutos:</p>
+                    <ul style="margin-left: 20px; color: #666;">
+                        <li>Cambiar textos o imágenes</li>
+                        <li>Agregar/quitar servicios o logos</li>
+                        <li>Actualizar información de contacto</li>
+                        <li>Publicar 1 artículo en el blog</li>
+                        <li>Ajustes visuales menores</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">TECNOLOGÍA DE ÚLTIMA GENERACIÓN</h2>
+            
+            <div class="highlight-box green">
+                <h3>🚀 Stack Tecnológico Moderno</h3>
+                <p><strong>Tu sitio será construido con las mejores tecnologías del 2025:</strong></p>
+                
+                <div class="tech-stack">
+                    <span class="tech-badge">Astro 4.x</span>
+                    <span class="tech-badge">Vue 3</span>
+                    <span class="tech-badge">TypeScript</span>
+                    <span class="tech-badge">Tailwind CSS</span>
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">GSAP</span>
+                    <span class="tech-badge">Chart.js</span>
+                </div>
+                
+                <h4 style="margin-top: 20px; color: #00AA00;">✅ Ventajas de esta tecnología:</h4>
+                <ul style="margin-left: 20px;">
+                    <li><strong>Velocidad extrema:</strong> 95-100/100 en Google PageSpeed</li>
+                    <li><strong>SEO superior:</strong> Posicionamiento optimizado en buscadores</li>
+                    <li><strong>Seguridad:</strong> Más seguro que WordPress (sin vulnerabilidades)</li>
+                    <li><strong>Mantenimiento mínimo:</strong> No requiere actualizaciones constantes</li>
+                    <li><strong>Carga ultra rápida:</strong> ~40KB de JavaScript vs 300KB+ en WordPress</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">FACILIDADES DE PAGO</h2>
+            
+            <div class="payment-options">
+                <h4>💳 Elige tu forma de pago preferida:</h4>
+                
+                <div class="payment-option">
+                    <strong>✅ Opción 1: Pago al Contado</strong><br>
+                    <span style="font-size: 24px; color: #2C5F8D; font-weight: bold;">$450.000</span>
+                    <p style="margin-top: 5px; color: #666;">Pago único al iniciar el proyecto</p>
+                </div>
+                
+                <div class="payment-option">
+                    <strong>⭐ Opción 2: Pago en 2 Cuotas (SIN RECARGO)</strong><br>
+                    <span style="font-size: 20px; color: #2C5F8D; font-weight: bold;">$225.000 + $225.000</span>
+                    <p style="margin-top: 5px; color: #666;">50% al iniciar + 50% al entregar</p>
+                </div>
+                
+                <div class="payment-option">
+                    <strong>Opción 3: Pago en 3 Cuotas</strong><br>
+                    <span style="font-size: 20px; color: #2C5F8D; font-weight: bold;">$165.000 x 3 cuotas</span>
+                    <p style="margin-top: 5px; color: #666;">Total: $495.000 (10% recargo por facilidad de pago)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">DESPUÉS DEL PRIMER AÑO</h2>
+            
+            <div class="highlight-box yellow">
+                <p><strong>📌 Importante:</strong> Durante el primer año todo está incluido (hosting, dominio, 2 actualizaciones, soporte 60 días).</p>
+                <p style="margin-top: 10px;">Desde el año 2 en adelante, podrás elegir cómo continuar:</p>
+            </div>
+            
+            <div style="background: linear-gradient(135deg, #FFB800 0%, #FF8C00 100%); color: white; padding: 30px; border-radius: 12px; margin: 30px 0; box-shadow: 0 4px 15px rgba(255, 184, 0, 0.3);">
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <span style="background: white; color: #FFB800; padding: 8px 20px; border-radius: 20px; font-weight: bold; font-size: 14px;">🎁 OFERTA ESPECIAL</span>
+                </div>
+                
+                <h3 style="text-align: center; font-size: 28px; margin-bottom: 15px;">EARLY BIRD: ¡Inscríbete Anticipadamente!</h3>
+                
+                <div style="background: rgba(255,255,255,0.2); padding: 20px; border-radius: 8px; margin: 20px 0;">
+                    <p style="font-size: 18px; margin-bottom: 15px; text-align: center;"><strong>Asegura tu precio especial ahora, ¡el plazo final para inscribirte es el Mes 8!</strong></p>
+                    
+                    <div style="text-align: center; margin: 20px 0;">
+                        <div style="font-size: 36px; font-weight: bold; margin: 10px 0;">$40.000 cada 2 meses</div>
+                        <div style="font-size: 18px; opacity: 0.9;">(Precio normal: $45.000)</div>
+                        <div style="background: #FF4444; display: inline-block; padding: 8px 20px; border-radius: 20px; margin-top: 10px; font-weight: bold;">AHORRAS $30.000 AL AÑO</div> </div>
+                    
+                    <div style="margin-top: 20px;">
+                        <p style="margin: 8px 0;"><strong>✅</strong> Precio especial por 2 años completos</p>
+                        <p style="margin: 8px 0;"><strong>✅</strong> Aseguras el precio ahora, y el pago comienza en el Mes 13</p> <p style="margin: 8px 0;"><strong>✅</strong> Incluye todo: hosting, actualizaciones, soporte</p>
+                        <p style="margin: 8px 0;"><strong>✅</strong> Sin aumento durante 24 meses</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.15); border-radius: 8px;">
+                    <p style="font-size: 16px; margin: 0;"><strong>💡 ¿Por qué inscribirte anticipadamente?</strong></p>
+                    <p style="font-size: 14px; margin: 10px 0;">Una vez que uses tus 2 actualizaciones incluidas, si necesitas más cambios, el plan bimensual es la opción más económica y conveniente. ¡Asegura tu precio especial!</p>
+                </div>
+            </div>
+
+            <h3 class="section-subtitle">Opciones de Mantenimiento (desde Año 2):</h3>
+            
+            <div class="option-card">
+                <h4>🔹 Opción 1: Por Demanda</h4>
+                <div class="price">$25.000 por actualización</div>
+                <ul>
+                    <li>Pagas solo cuando necesitas cambios</li>
+                    <li>Sin compromiso mensual</li>
+                    <li>Ideal para sitios que actualizan poco</li>
+                    <li>Tiempo de respuesta: 3-5 días hábiles</li>
+                    <li>Hosting: $50.000/año (se paga aparte)</li>
+                </ul>
+                <div class="best-for">
+                    <strong>✅ Mejor para:</strong> Empresas que actualizan 1-2 veces al año o menos
+                </div>
+            </div>
+
+            <div class="option-card recommended">
+                <span class="badge">⭐ RECOMENDADO</span>
+                <h4>🎯 Opción 2: Plan Bimensual</h4>
+                <div class="price">$45.000 cada 2 meses</div>
+                <div style="background: #FFE8CC; padding: 10px; border-radius: 5px; margin: 10px 0; border-left: 3px solid #FFB800;">
+                    <strong style="color: #856404;">🎁 Con Early Bird:</strong> <span style="color: #856404;">$40.000 c/2 meses (Asegura tu precio ahora - Plazo final Mes 8)</span>
+                </div>
+                <ul>
+                    <li><strong>Hasta 3 horas de trabajo</strong> cada 2 meses</li>
+                    <li>Actualizaciones de contenido 2 veces cada mes</li>
+                    <li>Cambios menores de diseño</li>
+                    <li><strong>Hosting incluido</strong> (no pagas aparte)</li>
+                    <li>Respaldo automático bimensual</li>
+                    <li><strong>Respuesta prioritaria en 48 horas</strong></li>
+                    <li>Soporte técnico incluido</li>
+                    <li>Sin sorpresas, precio fijo</li>
+                </ul>
+                <div class="best-for" style="background: #FFF9E6;">
+                    <strong>✅ Mejor para:</strong> Empresas que actualizan regularmente (1-2 veces al mes) y prefieren despreocuparse de lo técnico
+                </div>
+                <div style="background: #E8F8E8; padding: 15px; border-radius: 5px; margin-top: 15px;">
+                    <strong style="color: #00AA00;">💡 Valor real:</strong> 3 horas a $30k/hr = $90.000<br>
+                    <strong style="color: #00AA00;">Tu precio:</strong> $45.000<br>
+                    <strong style="color: #00AA00;">Ahorras:</strong> $45.000 (50% descuento)<br>
+                    <strong style="color: #00AA00;">Con Early Bird:</strong> Ahorras $30.000/año adicionales </div>
+            </div>
+
+            <div class="option-card">
+                <h4>💻 Opción 3: Panel de Administración (CMS)</h4>
+                <div class="price">$150.000 (pago único)</div>
+                <ul>
+                    <li>Panel web para editar contenido tú mismo</li>
+                    <li>Actualizaciones ilimitadas (las haces tú)</li>
+                    <li>Sin dependencia del desarrollador</li>
+                    <li>Capacitación completa incluida</li>
+                    <li>Video tutorial + Manual PDF</li>
+                    <li>Sesión de capacitación en vivo (1 hora)</li>
+                    <li>Hosting: $50.000/año (se paga aparte)</li>
+                </ul>
+                <div class="best-for">
+                    <strong>✅ Mejor para:</strong> Empresas con equipo de marketing o alguien técnico que actualize 3+ veces al mes
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>🤔 ¿Cuál opción elegir?</h3>
+                <p><strong>Por Demanda:</strong> Si tu sitio es más bien estático y actualizas muy poco (1-2 veces al año)</p>
+                <p><strong>Plan Bimensual:</strong> Si actualizas regularmente y prefieres que nosotros manejemos todo (más cómodo) ⭐</p>
+                <p><strong>CMS:</strong> Si tienes alguien técnico en tu equipo y actualizas mucho (3+ veces al mes)</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">PLAZO Y PROCESO DE TRABAJO</h2>
+            
+            <div class="highlight-box">
+                <h3 style="color: #2C5F8D; font-size: 24px; margin-bottom: 10px;">🗓️ PLAZO TOTAL: 30 días hábiles</h3>
+                <p style="font-size: 16px; margin-bottom: 20px;">(aproximadamente 6 semanas / 1.5 meses calendario)</p>
+                
+                <div style="background: white; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                    <h4 style="color: #2C5F8D; margin-bottom: 15px;">📍 Entregas Intermedias:</h4>
+                    <ul style="margin-left: 0;">
+                        <li><strong>Día 10:</strong> Diseño visual completo para tu aprobación</li>
+                        <li><strong>Día 20:</strong> Sitio funcional para que lo pruebes</li>
+                        <li><strong>Día 30:</strong> Entrega final con capacitación</li>
+                    </ul>
+                </div>
+                
+                <div style="background: #FFF9E6; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                    <strong style="color: #856404;">⏱️ El plazo comienza desde:</strong>
+                    <ul style="margin-left: 20px; margin-top: 10px; color: #856404;">
+                        <li>Pago inicial recibido</li>
+                        <li>Contenidos entregados (textos, fotos, logos)</li>
+                        <li>Reunión inicial completada</li>
+                    </ul>
+                </div>
+                
+                <div style="background: #E8F8E8; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                    <strong style="color: #00AA00;">✅ Este plazo garantiza:</strong>
+                    <ul style="margin-left: 20px; margin-top: 10px; color: #00AA00;">
+                        <li>Desarrollo profesional sin apuros</li>
+                        <li>Testing exhaustivo en todos los dispositivos</li>
+                        <li>2 rondas completas de ajustes incluidas</li>
+                        <li>Optimización y perfección del sitio</li>
+                        <li>Código limpio y mantenible</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3 class="section-subtitle" style="margin-top: 30px;">Proceso Semana a Semana:</h3>
+            
+            <div style="display: flex; flex-direction: column; gap: 15px;">
+                <div style="display: flex; align-items: start; gap: 15px;">
+                    <div style="background: #2C5F8D; color: white; min-width: 100px; padding: 10px; border-radius: 8px; text-align: center; font-weight: bold; flex-shrink: 0;">
+                        Semana 1<br>
+                        <span style="font-size: 12px; font-weight: normal;">Días 1-5</span>
+                    </div>
+                    <div>
+                        <strong style="color: #2C5F8D;">Planificación y Diseño Inicial</strong><br>
+                        <span style="color: #666;">Reunión inicial, análisis de requerimientos, wireframes y estructura del sitio</span>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: start; gap: 15px;">
+                    <div style="background: #2C5F8D; color: white; min-width: 100px; padding: 10px; border-radius: 8px; text-align: center; font-weight: bold; flex-shrink: 0;">
+                        Semana 2<br>
+                        <span style="font-size: 12px; font-weight: normal;">Días 6-10</span>
+                    </div>
+                    <div>
+                        <strong style="color: #2C5F8D;">Diseño Visual Completo</strong><br>
+                        <span style="color: #666;">Diseño de todas las secciones, colores, tipografías y elementos visuales</span><br>
+                        <strong style="color: #FFB800;">→ Primera entrega para aprobación</strong>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: start; gap: 15px;">
+                    <div style="background: #2C5F8D; color: white; min-width: 100px; padding: 10px; border-radius: 8px; text-align: center; font-weight: bold; flex-shrink: 0;">
+                        Semana 3<br>
+                        <span style="font-size: 12px; font-weight: normal;">Días 11-15</span>
+                    </div>
+                    <div>
+                        <strong style="color: #2C5F8D;">Desarrollo Frontend</strong><br>
+                        <span style="color: #666;">Construcción de secciones principales: Quienes Somos, Servicios, Portafolio, Blog, Contacto</span>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: start; gap: 15px;">
+                    <div style="background: #2C5F8D; color: white; min-width: 100px; padding: 10px; border-radius: 8px; text-align: center; font-weight: bold; flex-shrink: 0;">
+                        Semana 4<br>
+                        <span style="font-size: 12px; font-weight: normal;">Días 16-20</span>
+                    </div>
+                    <div>
+                        <strong style="color: #2C5F8D;">Funcionalidades e Integraciones</strong><br>
+                        <span style="color: #666;">Gráficos interactivos, animaciones, formulario, WhatsApp, Google Maps</span><br>
+                        <strong style="color: #FFB800;">→ Segunda entrega para pruebas</strong>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: start; gap: 15px;">
+                    <div style="background: #2C5F8D; color: white; min-width: 100px; padding: 10px; border-radius: 8px; text-align: center; font-weight: bold; flex-shrink: 0;">
+                        Semana 5<br>
+                        <span style="font-size: 12px; font-weight: normal;">Días 21-25</span>
+                    </div>
+                    <div>
+                        <strong style="color: #2C5F8D;">Testing y Optimización</strong><br>
+                        <span style="color: #666;">Pruebas en múltiples dispositivos, optimización de velocidad, SEO, primera ronda de ajustes</span>
+                    </div>
+                </div>
+                
+                <div style="display: flex; align-items: start; gap: 15px;">
+                    <div style="background: #00AA00; color: white; min-width: 100px; padding: 10px; border-radius: 8px; text-align: center; font-weight: bold; flex-shrink: 0;">
+                        Semana 6<br>
+                        <span style="font-size: 12px; font-weight: normal;">Días 26-30</span>
+                    </div>
+                    <div>
+                        <strong style="color: #00AA00;">Ajustes Finales y Entrega</strong><br>
+                        <span style="color: #666;">Segunda ronda de cambios, deploy a producción, capacitación y entrega final</span><br>
+                        <strong style="color: #00AA00;">→ 🎉 Lanzamiento oficial de tu sitio</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">NUESTRAS GARANTÍAS</h2>
+            
+            <div class="highlight-box green">
+                <ul style="margin-left: 0;">
+                    <li><strong>✓ Garantía de satisfacción:</strong> Hasta 2 rondas de ajustes hasta que estés 100% satisfecho</li>
+                    <li><strong>✓ Entrega a tiempo:</strong> Tu sitio estará listo en 30 días hábiles</li>
+                    <li><strong>✓ Comunicación constante:</strong> Updates cada 3 días del progreso</li>
+                    <li><strong>✓ Soporte post-venta:</strong> 60 días de soporte técnico incluido</li>
+                    <li><strong>✓ Código de calidad:</strong> Código limpio, documentado y profesional</li>
+                    <li><strong>✓ Sin sorpresas:</strong> Precio cerrado, sin costos ocultos</li>
+                    <li><strong>✓ Propiedad del código:</strong> Todo el código es 100% tuyo</li>
+                    <li><strong>✓ Oferta Early Bird:</strong> Precio especial si te inscribes anticipadamente al plan bimensual</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="urgency-box no-print">
+            <h3>⏰ ¡Cupos limitados!</h3>
+            <p>Solo tomamos 3 proyectos por mes para garantizar la máxima calidad.</p>
+            <p style="margin-top: 10px;"><strong>Esta cotización es válida por 30 días.</strong></p>
+        </div>
+
+        <div class="contact-box">
+            <h3>📞 CONTACTO</h3>
+            <div class="contact-item">
+                <strong>Email:</strong> <a href="" class="__cf_email__" data-cfemail="">daisyktbpa@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <strong>WhatsApp:</strong> +56 9 8276 3642
+            </div>
+            <div class="contact-item">
+                <strong>Horario:</strong> Lunes a Viernes, 9:00 - 18:00 hrs
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">PRÓXIMOS PASOS</h2>
+            
+            <div style="background: #E8F4F8; padding: 20px; border-radius: 8px;">
+                <p style="margin-bottom: 15px;"><strong>Para comenzar tu proyecto, solo necesitas:</strong></p>
+                <ol style="margin-left: 20px; line-height: 2;">
+                    <li>Confirmar tu interés por email o WhatsApp</li>
+                    <li>Agendar una reunión inicial (30-45 min)</li>
+                    <li>Realizar el pago inicial (50% o cuota 1)</li>
+                    <li>¡Comenzamos a construir tu sitio web profesional!</li>
+                </ol>
+                <p style="margin-top: 20px; text-align: center;">
+                    <strong style="color: #2C5F8D; font-size: 18px;">
+                        Estamos listos para llevar tu negocio al siguiente nivel 🚀
+                    </strong>
+                </p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p style="font-size: 14px; color: #999;">
+                Cotización válida por 30 días desde la fecha de emisión<br>
+                Todos los precios en pesos chilenos (CLP)
+            </p>
+            <p style="margin-top: 20px; font-style: italic; color: #999;">
+                Gracias por considerarnos para tu proyecto.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
